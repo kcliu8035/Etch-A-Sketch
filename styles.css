@@ -6,12 +6,22 @@ body {
     /* justify-content: center; */
     flex-direction: column;
     text-align: center;
+    background-color: antiquewhite;
+}
+
+.empty {
+   height: 30px;
 }
 
 .main {
     display: flex;
     justify-content: space-around;
     align-items: center;
+    height: 700px;
+}
+
+.boardContainer {
+    margin-bottom: 100px;
 }
 
 #etchBoard{
@@ -22,8 +32,8 @@ body {
 .board {
     /* border: 2px solid black; */
     border-radius: 25px;
-    height: 480px;
-    width: 790px;
+    height: 484px;
+    width: 792px;
     display: grid;
     margin-top: 110px;
     margin-right: 560px;
@@ -32,11 +42,7 @@ body {
 }
 
 .choiceButtons {
-    /* display: flex;
-    justify-content: center;
-    flex-direction: column; */
-    margin: 10px;
-    
+    margin: 10px;   
 }
 
 .customization {
@@ -49,7 +55,17 @@ body {
     background-color: beige;
 }
 
-#randomBTN {
-    height: 30px;
+
+.choiceButtons > img {
+    height: 30px; 
+}
+
+.choiceButtons > img:hover {
+    /* border: 1px solid blue; */
+    background-color: cornflowerblue;
+}
+
+.choiceButtons > img:focus {
+    background-color: cornflowerblue;
 }
 
