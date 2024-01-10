@@ -6,6 +6,7 @@ const red = document.getElementById('red');
 const eraser = document.getElementById('eraserBTN');
 const random = document.getElementById('randomBTN');
 
+
 //Drawing size
 const small = document.getElementById('small');
 const medium = document.getElementById('medium');
@@ -14,9 +15,16 @@ const custom = document.getElementById('custom');
 
 
 let color = 'black';
-let click = false;
+let click = true;
+
 
 function makeDivs(size) {
+    //SELECTING BODY TO DECIDE CLICK VARIABLE
+    document.querySelector('body').addEventListener('click', () => {
+        click = !click;
+        console.log(click);
+    })
+    
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
     board.style.gridTemplateColumns = `repeat(${size}, 1fr)`;
 
@@ -28,19 +36,23 @@ function makeDivs(size) {
         const div = document.createElement('div'); 
         board.insertAdjacentElement("beforeend", div);
 
-    // Create separate function to input here than changes color by setting input to user choice
+    // FIGURE OUT WHY CLICK DOESN"t WORK
+    if(click) {
         div.addEventListener("mouseover", (e) => {
-            div.style.backgroundColor = color
-            document.body.style.cursor = 'eraser.png'
+            div.style.backgroundColor = color;
         })
     }
+    }
+        
 }
 makeDivs(36);
 
 
+
 reset.addEventListener('click', () => {
-    let divs = board.querySelectorAll('div');
-    divs.forEach((div) => div.style.backgroundColor = '#c0c0c0');
+    window.location.reload();
+    
+   
 })
 
 
@@ -70,6 +82,7 @@ medium.addEventListener('click', () => {
 large.addEventListener('click', () => {
     makeDivs(16);
 })
+
 custom.addEventListener('click', () => {
     let input = prompt('Enter a value between 10 and 100');
     if (input < 10 || input > 100) {
@@ -78,6 +91,8 @@ custom.addEventListener('click', () => {
         makeDivs(input);
     }
 })
+
+
 
 
 
