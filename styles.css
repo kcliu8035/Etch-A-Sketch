@@ -22,12 +22,13 @@ body {
 
 .boardContainer {
     margin-bottom: 100px;
-    animation: shake 0.8s ease-in-out;
+    /* animation: shake 0.8s ease-in-out forwards; */
 }
 
 #etchBoard{
     position: absolute;
     right: 430px;
+    
 }
 
 .board {
@@ -37,8 +38,8 @@ body {
     width: 792px;
     display: grid;
     margin-top: 110px;
-    margin-right: 560px;
-    margin-left: 260px;
+    margin-right: 538px;
+    margin-left: 238px;
     position: relative;
 }
 
@@ -70,9 +71,13 @@ body {
     background-color: cornflowerblue;
 }
 
+.shake {
+    animation: shake 0.8s ease-in-out forwards;
+}
+
 @keyframes shake {
     0%, 100%{
-        transform: translateY(0, 0);
+        transform: translate(0, 0);
     }
 
     10%,30%,50%,70%,90%{

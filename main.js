@@ -5,6 +5,7 @@ const black = document.getElementById('black');
 const red = document.getElementById('red');
 const eraser = document.getElementById('eraserBTN');
 const random = document.getElementById('randomBTN');
+const boardContainer = document.querySelector('.boardContainer');
 
 
 //Drawing size
@@ -48,12 +49,17 @@ function makeDivs(size) {
 makeDivs(36);
 
 
-
+//Shakes and clears the board 
 reset.addEventListener('click', () => {
-    window.location.reload();
+    boardContainer.classList.add('shake');
+    setTimeout(function() {
+        let divs = board.querySelectorAll('div');
+        divs.forEach((div) => div.style.backgroundColor = '#c0c0c0');
+        boardContainer.classList.remove('shake');
+    }, 700)
     
-   
 })
+
 
 
 //Changes color
